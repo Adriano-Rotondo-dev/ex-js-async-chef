@@ -26,7 +26,6 @@ async function getChefBirthday(id) {
     const getRecipe = await fetch(`https://dummyjson.com/recipes/${id}`);
     if (!getRecipe) throw new Error("errore recupero ricetta");
     const recipe = await getRecipe.json();
-
     const userId = recipe.userId;
     if (!userId) throw new Error("Errore recupero id user");
     const getUserId = await fetch(`https://dummyjson.com/users/${userId}`);
