@@ -13,10 +13,10 @@
 . Restituire una Promise con la data di nascita dello chef.
 . Gestire gli errori con try/catch
 */
-//TODO: 🎯 Bonus 1 ✔
+//TODO: Bonus 1 ✔
 // Modifica getChefBirthday(id) per intercettare eventuali errori prima di fare la seconda richiesta.
 
-//TODO: 🎯 Bonus 2
+//TODO: Bonus 2 ✔
 //Utilizza la libreria dayjs per formattare la data di nascita nel formato giorno/mese/anno.
 
 import dayjs from "dayjs";
