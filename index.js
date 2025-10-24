@@ -13,6 +13,13 @@
 . Restituire una Promise con la data di nascita dello chef.
 . Gestire gli errori con try/catch
 */
+//TODO: 🎯 Bonus 1 ✔
+// Modifica getChefBirthday(id) per intercettare eventuali errori prima di fare la seconda richiesta.
+
+//TODO: 🎯 Bonus 2
+//Utilizza la libreria dayjs per formattare la data di nascita nel formato giorno/mese/anno.
+
+import dayjs from "dayjs";
 
 async function getChefBirthday(id) {
   try {
@@ -25,7 +32,9 @@ async function getChefBirthday(id) {
     const getUserId = await fetch(`https://dummyjson.com/users/${userId}`);
     if (!getUserId) throw new Error("Errore recupero dati dello user");
     const userInfo = await getUserId.json();
-    return userInfo.birthDate;
+    // return userInfo.birthDate;
+    const formatBirthDate = dayjs(userInfo.birthDate).format("DD/MM/YYYY");
+    return formatBirthDate;
   } catch (error) {
     console.error(error.message);
     throw error;
